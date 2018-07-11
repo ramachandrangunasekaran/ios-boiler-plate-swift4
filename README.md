@@ -9,7 +9,7 @@ This template comes with:
 - Examples for **account creation**.
 - Useful classes to **manage User and Session data**.
 - Handy **helpers** and **extensions** to make your coding experience faster and easier.
-
+- Added  **SwiftLint**  for betterment of coding standards.
 
 
 To use them simply download the branch and locally rebase against master/develop from your initial **iOS base** clone.

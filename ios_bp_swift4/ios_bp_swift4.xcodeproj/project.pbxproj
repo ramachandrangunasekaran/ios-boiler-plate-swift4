@@ -37,6 +37,7 @@
 		21F195F720F5EE880081B8A9 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F195F620F5EE880081B8A9 /* UIColorExtension.swift */; };
 		21F195F920F5F0EE0081B8A9 /* DateToStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F195F820F5F0EE0081B8A9 /* DateToStringExtension.swift */; };
 		21F195FB20F5F11D0081B8A9 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F195FA20F5F11D0081B8A9 /* DateExtension.swift */; };
+		21F195FD20F5F6E80081B8A9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 21F195FC20F5F6E80081B8A9 /* README.md */; };
 		CCE1C0CEDFD3C1AD7748BA40 /* Pods_ios_bp_swift4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8693A0328BB87D0490537F /* Pods_ios_bp_swift4.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +94,7 @@
 		21F195F620F5EE880081B8A9 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		21F195F820F5F0EE0081B8A9 /* DateToStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateToStringExtension.swift; sourceTree = "<group>"; };
 		21F195FA20F5F11D0081B8A9 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		21F195FC20F5F6E80081B8A9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		470A6FF32419D037190D1086 /* Pods-ios_bp_swift4UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_bp_swift4UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios_bp_swift4UITests/Pods-ios_bp_swift4UITests.release.xcconfig"; sourceTree = "<group>"; };
 		509D8A8E2D90DE060224845C /* Pods-ios_bp_swift4Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_bp_swift4Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios_bp_swift4Tests/Pods-ios_bp_swift4Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		87686121258F9DB784507D02 /* Pods-ios_bp_swift4Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_bp_swift4Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios_bp_swift4Tests/Pods-ios_bp_swift4Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 		2108059720F4A0C300BE258F /* ios_bp_swift4 */ = {
 			isa = PBXGroup;
 			children = (
+				21F195FC20F5F6E80081B8A9 /* README.md */,
 				210805EE20F4B06200BE258F /* Network Gateway */,
 				210805E720F4AF2C00BE258F /* Models */,
 				210805E220F4AEB500BE258F /* Manager */,
@@ -427,6 +430,7 @@
 			files = (
 				210805A320F4A0C500BE258F /* LaunchScreen.storyboard in Resources */,
 				210805A020F4A0C500BE258F /* Assets.xcassets in Resources */,
+				21F195FD20F5F6E80081B8A9 /* README.md in Resources */,
 				210805CD20F4A6F400BE258F /* README.md in Resources */,
 				2108059E20F4A0C300BE258F /* Main.storyboard in Resources */,
 			);

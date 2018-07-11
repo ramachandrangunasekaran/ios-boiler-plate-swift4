@@ -33,6 +33,10 @@
 		210805ED20F4B04800BE258F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210805EC20F4B04800BE258F /* Constants.swift */; };
 		210805F020F4B08C00BE258F /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210805EF20F4B08C00BE258F /* ApiClient.swift */; };
 		210805F320F4B7FA00BE258F /* HomeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210805F220F4B7FA00BE258F /* HomeApi.swift */; };
+		21F195F520F5EC6F0081B8A9 /* RMKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F195F420F5EC6F0081B8A9 /* RMKeyboardManager.swift */; };
+		21F195F720F5EE880081B8A9 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F195F620F5EE880081B8A9 /* UIColorExtension.swift */; };
+		21F195F920F5F0EE0081B8A9 /* DateToStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F195F820F5F0EE0081B8A9 /* DateToStringExtension.swift */; };
+		21F195FB20F5F11D0081B8A9 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F195FA20F5F11D0081B8A9 /* DateExtension.swift */; };
 		CCE1C0CEDFD3C1AD7748BA40 /* Pods_ios_bp_swift4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8693A0328BB87D0490537F /* Pods_ios_bp_swift4.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +89,10 @@
 		210805EC20F4B04800BE258F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		210805EF20F4B08C00BE258F /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		210805F220F4B7FA00BE258F /* HomeApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeApi.swift; sourceTree = "<group>"; };
+		21F195F420F5EC6F0081B8A9 /* RMKeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMKeyboardManager.swift; sourceTree = "<group>"; };
+		21F195F620F5EE880081B8A9 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		21F195F820F5F0EE0081B8A9 /* DateToStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateToStringExtension.swift; sourceTree = "<group>"; };
+		21F195FA20F5F11D0081B8A9 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		470A6FF32419D037190D1086 /* Pods-ios_bp_swift4UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_bp_swift4UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios_bp_swift4UITests/Pods-ios_bp_swift4UITests.release.xcconfig"; sourceTree = "<group>"; };
 		509D8A8E2D90DE060224845C /* Pods-ios_bp_swift4Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_bp_swift4Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios_bp_swift4Tests/Pods-ios_bp_swift4Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		87686121258F9DB784507D02 /* Pods-ios_bp_swift4Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_bp_swift4Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios_bp_swift4Tests/Pods-ios_bp_swift4Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -221,6 +229,9 @@
 				210805D420F4A99500BE258F /* UIStoryboardExtension.swift */,
 				210805D620F4A99500BE258F /* UIViewControllerExtension.swift */,
 				210805D720F4A99500BE258F /* UIViewExtension.swift */,
+				21F195F620F5EE880081B8A9 /* UIColorExtension.swift */,
+				21F195F820F5F0EE0081B8A9 /* DateToStringExtension.swift */,
+				21F195FA20F5F11D0081B8A9 /* DateExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -228,6 +239,7 @@
 		210805CB20F4A6C900BE258F /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				21F195F420F5EC6F0081B8A9 /* RMKeyboardManager.swift */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -537,6 +549,7 @@
 				210805F020F4B08C00BE258F /* ApiClient.swift in Sources */,
 				210805DB20F4A99600BE258F /* UIStoryboardExtension.swift in Sources */,
 				210805EB20F4AF4600BE258F /* Session.swift in Sources */,
+				21F195F720F5EE880081B8A9 /* UIColorExtension.swift in Sources */,
 				210805D320F4A90200BE258F /* BindWrapper.swift in Sources */,
 				210805ED20F4B04800BE258F /* Constants.swift in Sources */,
 				210805EA20F4AF4600BE258F /* User.swift in Sources */,
@@ -546,6 +559,9 @@
 				210805DF20F4A99600BE258F /* StringExtension.swift in Sources */,
 				210805DD20F4A99600BE258F /* UIViewControllerExtension.swift in Sources */,
 				210805DE20F4A99600BE258F /* UIViewExtension.swift in Sources */,
+				21F195FB20F5F11D0081B8A9 /* DateExtension.swift in Sources */,
+				21F195F920F5F0EE0081B8A9 /* DateToStringExtension.swift in Sources */,
+				21F195F520F5EC6F0081B8A9 /* RMKeyboardManager.swift in Sources */,
 				210805E020F4A99600BE258F /* JSONEncodingExtension.swift in Sources */,
 				2108059920F4A0C300BE258F /* AppDelegate.swift in Sources */,
 			);

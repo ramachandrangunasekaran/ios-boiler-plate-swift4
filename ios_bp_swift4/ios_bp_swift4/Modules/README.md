@@ -4,7 +4,7 @@
  
  ```bash
  ├── Module
- │   ├── View controller.
- │   ├── View Model.
- │   └── Custom Cell & Views.
+     ├── View controller.
+     ├── View Model.
+     └── Custom Cell & Views.
  ```

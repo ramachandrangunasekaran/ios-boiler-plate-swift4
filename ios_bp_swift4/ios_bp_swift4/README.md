@@ -19,7 +19,7 @@
  │   ├── Helpers
  │   │   └── Helper class for the entire application goes here.
  │   ├── Modules
- │   │   ├── Module
+ │   │   └── Module
  │   │       └── Module Related Files.(See readme inside readme)
  ├── AppDelegate.swift
  ├── Storybaords

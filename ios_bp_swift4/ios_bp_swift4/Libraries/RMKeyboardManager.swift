@@ -1,8 +1,8 @@
 //
-//  RMKeyboardManager.swift
-//  ios_bp_swift4
+//  TFKeyBoardToolBar.swift
+//  TwoFit
 //
-//  Created by R@M on 11/07/18.
+//  Created by R@M on 10/07/18.
 //  Copyright © 2018 2Fit. All rights reserved.
 //
 
@@ -14,7 +14,7 @@ class KeyboardAccessoryToolbar: UIToolbar {
         self.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
         self.barStyle = .default
         self.isTranslucent = false
-        self.tintColor = UIColor.init(rgb: 0x000000)
+        self.tintColor = UIColor.init(rgb: 0x04202C)
         
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.done))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
@@ -24,19 +24,17 @@ class KeyboardAccessoryToolbar: UIToolbar {
         self.sizeToFit()
     }
     
-    
     @objc func done() {
         // Tell the current first responder (the current text input) to resign.
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
 
-
 class RMKeyboardManager {
     
     static let shared = RMKeyboardManager()
     
-    var enable:Bool {
+    var enable: Bool {
         didSet {
             if enable == true {
                 NotificationCenter.default.addObserver(self, selector: #selector(KeyBoardChanged(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -45,17 +43,36 @@ class RMKeyboardManager {
                 
                 NotificationCenter.default.addObserver(self, selector: #selector(KeyBoardChanged(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
                 
+                NotificationCenter.default.addObserver(self, selector: #selector(textFieldViewChange(notification:)), name: Notification.Name.UITextFieldTextDidBeginEditing, object: nil)
+                
+                NotificationCenter.default.addObserver(self, selector: #selector(textFieldViewChange(notification:)),  name: Notification.Name.UITextViewTextDidBeginEditing, object: nil)
+                
+                NotificationCenter.default.addObserver(self, selector: #selector(textFieldViewChange(notification:)), name: Notification.Name.UITextFieldTextDidEndEditing, object: nil)
+                
+                NotificationCenter.default.addObserver(self, selector: #selector(textFieldViewChange(notification:)),  name: Notification.Name.UITextViewTextDidEndEditing, object: nil)
+                
             }else{
                 NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
                 
                 NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
                 
                 NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+                
+                NotificationCenter.default.removeObserver(self, name: Notification.Name.UITextFieldTextDidBeginEditing, object: nil)
+                
+                NotificationCenter.default.removeObserver(self, name: Notification.Name.UITextViewTextDidBeginEditing, object: nil)
+                
+                NotificationCenter.default.removeObserver(self, name: Notification.Name.UITextFieldTextDidEndEditing, object: nil)
+                
+                NotificationCenter.default.removeObserver(self, name: Notification.Name.UITextViewTextDidEndEditing, object: nil)
+                
             }
         }
         
     }
     
+    var _textFieldView:UIView? = nil
+    var _viewFrame:CGRect? = nil
     
     init() {
         self.enable = false
@@ -64,19 +81,40 @@ class RMKeyboardManager {
         UITextView.appearance().inputAccessoryView = accessoryView
     }
     
-    @objc func KeyBoardChanged(notification: Notification){
+    @objc func textFieldViewChange(notification: Notification){
+        _textFieldView = notification.object as? UIView
+        //        _rootViewController = _textFieldView?.parentViewController
+        if let viewFrame = _textFieldView?.convert((_textFieldView?.frame)!, to: nil) {
+            _viewFrame = viewFrame
+        }
+    }
+
+    @objc func KeyBoardChanged(notification: Notification) {
         
-        guard let keyBoardRect = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else{
+        guard let keyBoardRect = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
             return
         }
-        
+        var move = CGFloat.init((keyBoardRect.height))
+        if(_viewFrame != nil) {
+            if (_viewFrame?.origin.y)! > keyBoardRect.height {
+                move = abs((abs((_viewFrame?.origin.y)! - keyBoardRect.height)))
+                if move > keyBoardRect.height {
+                    move = keyBoardRect.height
+                }
+            } else {
+                if((_viewFrame?.origin.y)! * 2 < keyBoardRect.height) {
+                    move = 0
+                } else {
+                    move = (_viewFrame?.origin.y)!
+                }
+            }
+        }
         switch notification.name {
-            
         case Notification.Name.UIKeyboardWillShow:
-            UIApplication.shared.keyWindow?.frame.origin.y = -(keyBoardRect.height - 50)
+            UIApplication.shared.keyWindow?.frame.origin.y = -move
             break
         case Notification.Name.UIKeyboardWillChangeFrame:
-            UIApplication.shared.keyWindow?.frame.origin.y = -keyBoardRect.height
+            UIApplication.shared.keyWindow?.frame.origin.y = -move
             break
         case Notification.Name.UIKeyboardWillHide:
             UIApplication.shared.keyWindow?.frame.origin.y = 0

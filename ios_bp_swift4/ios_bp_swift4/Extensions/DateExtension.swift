@@ -104,7 +104,7 @@ public extension Date {
         return Calendar.current.date(from: dc)!
     }
     
-    public static func secondsBetween(date1 d1:Date, date2 d2:Date) -> Int {
+    public static func secondsBetween(date1 d1: Date, date2 d2: Date) -> Int {
         let dc = Calendar.current.dateComponents([.second], from: d1, to: d2)
         return dc.second!
     }

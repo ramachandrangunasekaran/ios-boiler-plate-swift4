@@ -9,7 +9,6 @@
 
 import Foundation
 
-
 public extension Date {
     
     // MARK: Convert from String
@@ -19,7 +18,7 @@ public extension Date {
      
      - Returns: A Date() object if successfully converted from string or nil.
      */
-    init?(fromString string: String, format:DateFormatType, timeZone: TimeZoneType = .local, locale: Locale = Foundation.Locale.current) {
+    init?(fromString string: String, format: DateFormatType, timeZone: TimeZoneType = .local, locale: Locale = Foundation.Locale.current) {
         guard !string.isEmpty else {
             return nil
         }
